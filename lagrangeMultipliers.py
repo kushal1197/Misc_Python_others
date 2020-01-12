@@ -6,14 +6,14 @@ Lagrange multipliers
 import numpy as np
 from scipy import optimize
 
-# First we define the functions, YOU SHOULD IMPLEMENT THESE
+# define functions
 def f (x, y) :
     return -np.exp(x-y*y+x*y)
 
 def g (x, y) :
     return np.cosh(y)+x-2
 
-# Next their derivatives, YOU SHOULD IMPLEMENT THESE
+# define derivatives
 def dfdx (x, y) :
     return (-np.exp(x-y*y+x*y))*(1+y)
 
@@ -26,7 +26,7 @@ def dgdx (x, y) :
 def dgdy (x, y) :
     return np.sinh(y)
 
-# Use the definition of DL from previously.
+# 
 def DL (xyλ) :
     [x, y, λ] = xyλ
     return np.array([
@@ -35,11 +35,6 @@ def DL (xyλ) :
             - g(x, y)
         ])
 
-# To score on this question, the code above should set
-# the variables x, y, λ, to the values which solve the
-# Langrange multiplier problem.
-
-# I.e. use the optimize.root method, as you did previously.
 
 x, y, λ = (0,0,0)
 
